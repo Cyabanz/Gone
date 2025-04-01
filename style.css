@@ -1,0 +1,67 @@
+/* Full-page styling */
+body {
+    display: flex;
+    justify-content: center; /* Centers content */
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background for contrast */
+    margin: 0;
+}
+
+/* Search container */
+.search-container {
+    position: relative;
+    width: 300px; /* Adjust width for a clean fit */
+    display: flex;
+    align-items: center;
+}
+
+/* Search input styling */
+.search-input {
+    flex: 1;
+    height: 45px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 14px;
+    background-color: #222; /* Matches button */
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 162, 255, 0.8);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect on focus */
+.search-input:focus {
+    box-shadow: 0 0 12px rgba(0, 162, 255, 1);
+}
+
+/* Search button merged with input */
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 45px;
+    border: none;
+    border-top-right-radius: 50px; /* Matches input's border */
+    border-bottom-right-radius: 50px;
+    background-color: #222; /* Same as input */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.search-btn:hover {
+    background-color: #333; /* Slightly lighter for effect */
+}
+
+/* Boxicon styling */
+.search-btn i {
+    font-size: 18px;
+}
