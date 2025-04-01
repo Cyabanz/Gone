@@ -1,0 +1,164 @@
+/* Reset and global styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  border: initial;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Cards container */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+}
+
+/* Individual card style */
+.box-container {
+  position: relative; /* Ensures absolute children stay within this box */
+  width: 230px; /* Adjust width for cleaner look */
+  height: 150px; /* Set height of the box */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* Subtle glow effect */
+  overflow: hidden; /* Prevent content overflow */
+  background-color: #252525; /* Dark background for the box */
+  display: flex;
+  justify-content: center; /* Center content */
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect to lift box */
+.box-container:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Enhance glow */
+}
+
+/* Image inside the box */
+.box-container img {
+  width: 100%; /* Fill container width */
+  height: 100%; /* Fill container height */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 12px; /* Keep all corners rounded */
+}
+
+/* Game name label - hidden by default */
+.game-name {
+  position: absolute; /* Keep it positioned over the image */
+  top: 50%; /* Move it to the vertical center */
+  left: 50%; /* Move it to the horizontal center */
+  transform: translate(-50%, -50%); /* Perfectly center the text */
+  width: 100%; /* Full width of the box */
+  text-align: center; /* Center text */
+  font-size: 16px; /* Slightly bigger font */
+  font-weight: 600; /* Make it bolder */
+  color: rgba(255, 255, 255, 0.85); /* Slightly brighter white text */
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 0; /* Hide text initially */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Show game name on hover */
+.box-container:hover .game-name {
+  opacity: 1; /* Fade in text on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .box-container {
+    width: 180px; /* Adjust card width for smaller screens */
+    height: 120px; /* Adjust card height */
+  }
+
+  .game-name {
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+}
+
+/* Full-page styling */
+body {
+    display: flex;
+    justify-content: center; /* Centers content */
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background for contrast */
+    margin: 0;
+}
+
+/* Search container */
+.search-container {
+    position: relative;
+    width: 300px; /* Adjust width for a clean fit */
+    display: flex;
+    align-items: center;
+}
+
+/* Search input styling */
+.search-input {
+    flex: 1;
+    height: 45px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 14px;
+    background-color: #222; /* Matches button */
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 162, 255, 0.8);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect on focus */
+.search-input:focus {
+    box-shadow: 0 0 12px rgba(0, 162, 255, 1);
+}
+
+/* Search button merged with input */
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 45px;
+    border: none;
+    border-top-right-radius: 50px; /* Matches input's border */
+    border-bottom-right-radius: 50px;
+    background-color: #222; /* Same as input */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.search-btn:hover {
+    background-color: #333; /* Slightly lighter for effect */
+}
+
+/* Boxicon styling */
+.search-btn i {
+    font-size: 18px;
+}
